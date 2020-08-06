@@ -1,0 +1,15 @@
+name: 'Release after tag'
+description: 'Release a gem to rubygems after tagged'
+author: 'qbantek'
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
+inputs: 
+  rubygems_api_key:
+    description: 'Rubygems.org API key'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.rubygems_api_key }}
